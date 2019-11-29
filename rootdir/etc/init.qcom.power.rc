@@ -145,7 +145,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu6/sched_load_boost -6
     write /sys/devices/system/cpu/cpu7/sched_load_boost -6
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1209600"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
+    write /sys/module/cpu_boost/parameters/input_boost_ms 200
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 500
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 20000
 
