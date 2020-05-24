@@ -1,8 +1,2 @@
-# Allow init to mount offmode charging daemon
-allow init rootfs:file mounton;
-
-# Allow init to mount vendor configs
-allow init vendor_configs_file:file mounton;
-
-# Allow init to mount overlay files
-allow init vendor_overlay_file:file mounton;
+allow init input_device:chr_file ioctl;
+allow init input_device:chr_file write;
