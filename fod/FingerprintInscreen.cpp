@@ -38,6 +38,9 @@
 #define FOD_STATUS_ON 1
 #define FOD_STATUS_OFF 0
 
+#define HBM_OFF_DELAY 50
+#define HBM_ON_DELAY 250
+
 namespace vendor {
 namespace lineage {
 namespace biometrics {
@@ -82,6 +85,18 @@ Return<void> FingerprintInscreen::onStartEnroll() {
 
 Return<void> FingerprintInscreen::onFinishEnroll() {
     return Void();
+}
+
+Return<int32_t> FingerprintInscreen::getHbmOffDelay() {
+    return HBM_OFF_DELAY;
+}
+
+Return<int32_t> FingerprintInscreen::getHbmOnDelay() {
+    return HBM_ON_DELAY;
+}
+
+Return<bool> FingerprintInscreen::supportsAlwaysOnHBM() {
+    return true;
 }
 
 Return<void> FingerprintInscreen::switchHbm(bool enabled) {
