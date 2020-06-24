@@ -45,10 +45,11 @@ LocAdapterBase::LocAdapterBase(const LOC_API_ADAPTER_EVENT_MASK_T mask,
                                ContextBase* context, bool isMaster,
                                LocAdapterProxyBase *adapterProxyBase,
                                bool waitForDoneInit) :
-    mIsMaster(isMaster), mEvtMask(mask), mContext(context),
-    mLocApi(context->getLocApi()), mLocAdapterProxyBase(adapterProxyBase),
-    mMsgTask(context->getMsgTask()),
-    mIsEngineCapabilitiesKnown(ContextBase::sIsEngineCapabilitiesKnown)
+    mIsMaster(isMaster), mIsEngineCapabilitiesKnown(ContextBase::sIsEngineCapabilitiesKnown),
+    mEvtMask(mask), mContext(context), mLocApi(context->getLocApi()),
+	mLocAdapterProxyBase(adapterProxyBase),
+    mMsgTask(context->getMsgTask())
+
 {
     LOC_LOGd("waitForDoneInit: %d", waitForDoneInit);
     if (!waitForDoneInit) {
@@ -88,8 +89,8 @@ void LocAdapterBase::
                         const GpsLocationExtended& locationExtended,
                         enum loc_sess_status status,
                         LocPosTechMask loc_technology_mask,
-                        GnssDataNotification* pDataNotify,
-                        int msInWeek)
+                        __attribute__ ((unused)) GnssDataNotification* pDataNotify,
+                        __attribute__ ((unused)) int msInWeek)
 {
     if (mLocAdapterProxyBase != NULL) {
         mLocAdapterProxyBase->reportPositionEvent((UlpLocation&)location,
@@ -162,7 +163,7 @@ DEFAULT_IMPL(false)
 bool LocAdapterBase::
     requestNiNotifyEvent(const GnssNiNotification &/*notify*/,
                          const void* /*data*/,
-                         const LocInEmergency emergencyState)
+                         const __attribute__ ((unused)) LocInEmergency emergencyState)
 DEFAULT_IMPL(false)
 
 void LocAdapterBase::
@@ -335,7 +336,7 @@ LocAdapterBase::updateClientsEventMask()
 DEFAULT_IMPL()
 
 void
-LocAdapterBase::stopClientSessions(LocationAPI* client)
+LocAdapterBase::stopClientSessions(__attribute__ ((unused)) LocationAPI* client)
 DEFAULT_IMPL()
 
 void
