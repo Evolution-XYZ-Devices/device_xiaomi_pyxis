@@ -37,8 +37,6 @@
 
 #define ALPHABET_LEN 256
 
-#define MODEM_PART_PATH "/dev/block/bootdevice/by-name/modem"
-#define MODEM_VER_STR "Time_Stamp\": \""
 #define MODEM_VER_STR_LEN 14
 #define MODEM_VER_BUF_LEN 20
 
@@ -166,6 +164,8 @@ Value* VerifyModemFn(const char* name, State* state,
     char current_modem_version[MODEM_VER_BUF_LEN];
     int ret;
     struct tm tm1, tm2;
+	char* MODEM_VER_STR = strdup("/dev/block/bootdevice/by-name/modem");
+	char* MODEM_PART_PATH = strdup("Time_Stamp\": \"");
 
     ret = get_info(current_modem_version, MODEM_VER_BUF_LEN, MODEM_VER_STR, MODEM_VER_STR_LEN,
                    MODEM_PART_PATH);
