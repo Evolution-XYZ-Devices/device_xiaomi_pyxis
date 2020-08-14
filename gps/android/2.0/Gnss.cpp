@@ -321,8 +321,8 @@ Return<bool> Gnss::injectLocation(double latitudeDegrees,
     }
 }
 
-Return<bool> Gnss::injectTime(int64_t timeMs, int64_t timeReferenceMs,
-                              int32_t uncertaintyMs) {
+Return<bool> Gnss::injectTime(int64_t __attribute__ ((unused)) timeMs, int64_t __attribute__ ((unused)) timeReferenceMs,
+                              int32_t __attribute__ ((unused)) uncertaintyMs) {
     return true;
 }
 
