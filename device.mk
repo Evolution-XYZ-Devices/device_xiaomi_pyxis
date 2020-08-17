@@ -421,10 +421,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 # FM
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio
+#PRODUCT_PACKAGES += \
+#    FM2 \
+#    libqcomfm_jni \
+#    qcom.fmradio
 
 # Vibrator
 PRODUCT_PACKAGES += \
