@@ -109,7 +109,6 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # FOD
 TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension.xiaomi_pyxis
-TARGET_USES_FOD_ZPOS := true
 
 # Display
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
